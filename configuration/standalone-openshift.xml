@@ -1,9 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- custom code -->
 <server xmlns="urn:jboss:domain:1.7">
-    <system-properties> 
-        <property name="jolokia.agent" value="http://0.0.0.0:8778/jolokia/"/>
-    </system-properties> 
     <extensions>
         <extension module="org.jboss.as.clustering.infinispan"/>
         <extension module="org.jboss.as.clustering.jgroups"/>
@@ -29,6 +26,9 @@
         <extension module="org.jboss.as.webservices"/>
         <extension module="org.jboss.as.weld"/>
     </extensions>
+    <system-properties> 
+        <property name="jolokia.agent" value="http://0.0.0.0:8778/jolokia/"/>
+    </system-properties> 
     <management>
         <security-realms>
             <security-realm name="ManagementRealm">
