@@ -79,7 +79,7 @@ copy_artifacts "deployments"
 #curl -o ${DEPLOY_DIR}/ROOT.war -O ${WAR_FILE_URL}
 
 if [ -d $LOCAL_SOURCE_DIR/deployments ]; then
-  echo "Copying config files from project..."
+  echo "Copying deployment files from project..."
   cp -v $LOCAL_SOURCE_DIR/deployments/* $JBOSS_HOME/standalone/deployments/
 fi
 
@@ -93,6 +93,9 @@ if [ -d $LOCAL_SOURCE_DIR/modules ]; then
   cp -vr $LOCAL_SOURCE_DIR/modules/* $JBOSS_HOME/modules/
 fi
 
-
+if [ -d $LOCAL_SOURCE_DIR/bin ]; then
+  echo "Copying bin from project..."
+  cp -vr $LOCAL_SOURCE_DIR/bin/* $JBOSS_HOME/bin/
+fi
 
 exit 0
